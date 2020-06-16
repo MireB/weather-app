@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/1b0424b483.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <title>Wthr! ☁️</title>
+  </head>
+
+ <body>
+   
+    <div class="container">
+      
+      <div class="container">
+        <div class="searchingTool">
+          <form id="search-city">
+            <div class="row justify-content-center">
+              <div class="col-12" >
+                <button type="button" id="search" class="btn"></button>
+                <input type="text" id="your-city" placeholder="Search City..." />
+                <button type="submit" id="current-location" class="btn">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+          </form>
+          </div>
+      </div>
+  <button  class="current-button" id="current-button">Current</button>
+      
+
+
+      <h1 id="location">Barcelona</h1>
+      <ul>
+        <li id=current-date></li>
+        <li id="description"><strong>Sunny</strong></li>
+      </ul>
+      <div class="todayForecast">
+          <div class="clearfix">
+             
+            <div class="row justify-content-center">
+                <i class="fas fa-circle float-left"></i>
+                <div class="float-left"><span class="temperature" id="temperature">21</span> <span class="units" #units-temperature> <a href="#">˚C</a>  |<a href="#" id="fahrenheit-temp">˚F</a></span></div>
+                
+              </div>
+          </div>
+        
+        
+        </div>
+        
+        
+       
+      <p>
+        <strong>Max:</strong><span id="max-temp">22</span>˚ <strong>Low:</strong><span id="low-temp">17</span>˚
+        <strong>Humidity:</strong><span id="humidity">57</span>% <strong>Wind:</strong><span id="wind">7</span>km/h
+      </p>
+      
+      
+      <div class="weekForecast">
+        <div class="row justify-content-center">
+            <div class="col-2">
+              <h5>Thu</h5>
+              <i class="fas fa-cloud-showers-heavy"></i>
+              <br />
+              <span>17°C</span>
+            </div>
+            <div class="col-2">
+              <h5>Fri</h5>
+              <i class="fas fa-cloud"></i>
+              <br />
+              <span>21°C</span>
+            </div>
+            <div class="col-2">
+              <h5>Sat</h5>
+              <i class="fas fa-cloud-sun"></i>
+              <br />
+              <span>22°C</span>
+            </div>
+            <div class="col-2">
+              <h5>Sun</h5>
+              <i class="fas fa-cloud-sun"></i>
+              <br />
+              <span>22°C</span>
+            </div>
+            <div class="col-2">
+              <h5>Mon</h5>
+              <i class="fas fa-wind"></i>
+              <br />
+              <span>22°C</span>
+            </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+ </body>
+
+  
+  <footer>Open-source code, by <strong>mire bosch</strong></footer>
+  
+</html>
