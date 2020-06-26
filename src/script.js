@@ -69,7 +69,7 @@ function displayTemperature(response) {
   );
 
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
 }
 
 let date = document.querySelector("#current-date");
