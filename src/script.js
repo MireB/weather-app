@@ -67,6 +67,12 @@ function displayTemperature(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#max-temp").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+  document.querySelector("#low-temp").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
 
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
