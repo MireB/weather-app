@@ -96,3 +96,6 @@ let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", currentLocation);
 
 search("Amsterdam");
+
+let fahrenheitLink = document.querySelector("#fahrenheit-temp");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
