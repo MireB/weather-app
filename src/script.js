@@ -76,6 +76,13 @@ function displayTemperature(response) {
 
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 
 let date = document.querySelector("#current-date");
