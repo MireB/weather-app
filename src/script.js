@@ -35,10 +35,31 @@ function currentDateTime(time) {
   return `${days[day]} ${day} ${months[month]}, ${hours}:${minutes}`;
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `
+  <div class="col-2">
+  <h5>${formatHours(forecast.dt * 1000)}</h5>
+  <img 
+  src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+  alt=
+   width= "80px"
+  height="80px"
+  class=colum-one" 
+  id="first-forecast"
+  />
+  <br />
+  <span>${Math.round(forecast.main.temp)}˚</span>
+</div>`;
+}
+
 function search(city) {
   let apiKey = "9430278bf6c3175ec4b37df9d1ac0836";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metrics`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function submit(event) {
