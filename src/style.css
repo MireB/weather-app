@@ -94,26 +94,11 @@ p {
   margin-top: 20px;
 }
 
-.fa-cloud-showers-heavy {
-  color: #fcbb1b;
-  font-size: 40px;
+img {
+  position: relative;
+  right: 30px;
+  size
 }
-
-.fa-cloud {
-  color: #fcbb1b;
-  font-size: 40px;
-}
-
-.fa-cloud-sun {
-  color: #fcbb1b;
-  font-size: 40px;
-}
-
-.fa-wind {
-  color: #fcbb1b;
-  font-size: 40px;
-}
-
 footer {
   text-align: center;
   color: #fcbb1b;
