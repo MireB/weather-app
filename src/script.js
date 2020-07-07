@@ -68,6 +68,20 @@ function submit(event) {
   search(city);
 }
 
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#temperature");
+  let fahreinheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahreinheitTemperature);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 function searchLocation(position) {
   let apiKey = "9430278bf6c3175ec4b37df9d1ac0836";
   let apiUrlLocation = `http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon={position.coords.longitude}&appid=${apiKey}&units=metric`;
@@ -81,8 +95,11 @@ function currentLocation(event) {
 
 function displayTemperature(response) {
   document.querySelector("#location").innerHTML = response.data.name;
+
+  celsiusTemperature = response.data.main.temp;
+
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    celsiusTemperature
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -116,7 +133,11 @@ searchForm.addEventListener("submit", submit);
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", currentLocation);
 
-search("Amsterdam");
+let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-temp");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-temp");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+search("Amsterdam");

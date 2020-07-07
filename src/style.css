@@ -66,12 +66,10 @@ ul {
 .units {
   position: relative;
   bottom: 40px;
+  
 }
 
-.celUnits {
-  position: relative;
-  top: 40px;
-}
+
 
 li {
   list-style: none;
