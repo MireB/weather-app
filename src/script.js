@@ -35,22 +35,40 @@ function currentDateTime(time) {
   return `${days[day]} ${day} ${months[month]}, ${hours}:${minutes}`;
 }
 
+function formatHours(timestamp) {
+  let hours = time.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  retunr`${hours}:${minutes}`;
+}
+
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `
-  <div class="col-2">
-  <h5>${formatHours(forecast.dt * 1000)}</h5>
-  <img 
-  src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-  alt=
-   width= "80px"
-  height="80px"
-  class=colum-one" 
-  id="first-forecast"
-  />
-  <br />
-  <span>${Math.round(forecast.main.temp)}˚</span>
-</div>`;
+  let forecast = response.data.list[0];
+
+  forecastElement.innerHTML;
+  `
+    <div class="col-2">
+      <h5>${formatHours(forecast.dt * 1000)}</h5>
+      <img 
+      src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}d@2x.png"
+      alt=
+
+      />
+      <br />
+      <strong>${Math.round(forecast.main.temp_max)}˚</strong>${Math.round(
+    forecast.main.temp_min
+  )}˚
+    </div>
+
+    forecast = response.data.list[1];
+
+  `;
 }
 
 function search(city) {
@@ -140,4 +158,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-temp");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
 search("Amsterdam");
