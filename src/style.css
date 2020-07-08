@@ -6,10 +6,11 @@ body {
   display: block;
   margin: auto;
   max-width: 550px;
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  background-blend-mode: multiply,multiply;
   padding: 20px 20px 20px 20px;
   border-radius: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .searchingTool {
@@ -87,6 +88,7 @@ p {
   margin-top: 20px;
 }
 
+
 img {
   position: relative;
   right: 30px;
@@ -97,7 +99,7 @@ footer {
   color: #fcbb1b;
   position: relative;
   font-size: small;
-  top: 75px;
+  top: 60px;
 }
 .footer-link {
   color: #fcbb1b;
