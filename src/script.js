@@ -36,6 +36,7 @@ function currentDateTime(time) {
 }
 
 function formatHours(timestamp) {
+  let time = new Date(timestamp);
   let hours = time.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -44,20 +45,19 @@ function formatHours(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  retunr`${hours}:${minutes}`;
+  return `${hours}:${minutes}`;
 }
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecast = response.data.list[0];
 
-  forecastElement.innerHTML;
-  `
+  forecastElement.innerHTML = `
     <div class="col-2">
       <h5>${formatHours(forecast.dt * 1000)}</h5>
       <img 
-      src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}d@2x.png"
-      alt=
+      src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+      alt= 
 
       />
       <br />
